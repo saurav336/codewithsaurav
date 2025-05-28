@@ -1,45 +1,25 @@
-<<<<<<< HEAD
-services:
-  app:
-    build:
-      context: ./
-=======
-version: "3.8"
-
 services:
   app:
     build:
       context: "."
->>>>>>> acb3841 (PHP Functions)
       dockerfile: Dockerfile
     container_name: sauravphp
     restart: always
     working_dir: /var/www/
     volumes:
-<<<<<<< HEAD
-      - ../src:/var/www
-
-  nginx:
-    image: nginx:1.27.4
-=======
       - ../:/var/www
   nginx:
     image: nginx:latest
->>>>>>> acb3841 (PHP Functions)
     container_name: sauravnginx
     restart: always
     ports:
       - "8000:80"
     volumes:
-<<<<<<< HEAD
-      - ../src:/var/www
-      - ./nginx:/etc/nginx/conf.d
-=======
       - ../:/var/www
       - ./nginx:/etc/nginx/conf.d
   db:
     container_name: saurav-db
-    image: mysql:8.0
+    image: mysql:latest
     volumes:
       - ./storage/mysql:/var/lib/mysql
     restart: always
@@ -57,4 +37,3 @@ services:
       - "8025:8025"
       - "1025:1025"
   
->>>>>>> acb3841 (PHP Functions)
